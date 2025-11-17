@@ -2,7 +2,6 @@
 
 namespace GuessingGame
 {
-
     //Abstract Game Class
     public abstract class Game
     {
@@ -19,14 +18,13 @@ namespace GuessingGame
             Max = 100;
             random = new Random();
         }
-
         //Method to generate a random number in range 
         public int GenerateRandomNumber()
         {
             int num = random.Next(Min, Max + 1);
             return num;
         }
-
+        
         //Abstract method to reset the game
         public abstract void ResetGame();
     }
@@ -36,18 +34,13 @@ namespace GuessingGame
     {
         public int SecretNumber { get; set; }
         public int AttemptCount { get; set; }
-
+        //Constructor generates number, and sets count to 0
         public GuessingGame()
         {
             SecretNumber = GenerateRandomNumber();
             AttemptCount = 0;
         }
-
-        public bool IsCorrect(int guess)
-        {
-            return guess == SecretNumber;
-        }
-
+        //Method to check if guess is correct, too high, or too low 
         public string CheckGuess(int guess)
         {
             string hint;
@@ -66,16 +59,12 @@ namespace GuessingGame
             }
             return hint;
         }
-
-
+        
+        //Method to start reset game
         public override void ResetGame()
         {
             SecretNumber = GenerateRandomNumber();
             AttemptCount = 0;
-
         }
     }
-
-
-
 }
