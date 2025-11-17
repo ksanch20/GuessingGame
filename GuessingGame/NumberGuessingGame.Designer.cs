@@ -44,7 +44,6 @@
             this.lblPrompt.Size = new System.Drawing.Size(185, 13);
             this.lblPrompt.TabIndex = 0;
             this.lblPrompt.Text = "Guess a number between 1 and 100: ";
-            this.lblPrompt.Click += new System.EventHandler(this.label1_Click);
             // 
             // textGuess
             // 
@@ -104,7 +103,6 @@
             this.Name = "NumberGuessingGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Number Guessing Game";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
