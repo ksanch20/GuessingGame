@@ -12,16 +12,11 @@ namespace GuessingGame
 {
     public partial class NumberGuessingGame : Form
     {
-        GuessingGame game = new GuessingGame();
+        GuessingGame game;
         public NumberGuessingGame()
         {
             InitializeComponent();
-            game.ResetGame();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            game = new GuessingGame();
         }
 
         private void btnGuess_Click(object sender, EventArgs e)
@@ -39,9 +34,7 @@ namespace GuessingGame
             {
                 lblFeedback.Text = "Please enter a valid number";
                 return;
-
             }
-
             //Check the guess
             string result = game.CheckGuess(guess);
 
@@ -56,11 +49,6 @@ namespace GuessingGame
             lblFeedback.Text = "";
             lblAttempts.Text = "Attempts: 0";
             textGuess.Clear();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
