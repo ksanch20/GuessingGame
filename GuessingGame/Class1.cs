@@ -37,8 +37,7 @@ namespace GuessingGame
         //Constructor generates number, and sets count to 0
         public GuessingGame()
         {
-            SecretNumber = GenerateRandomNumber();
-            AttemptCount = 0;
+            ResetGame();
         }
         //Method to check if guess is correct, too high, or too low 
         public string CheckGuess(int guess)
@@ -60,7 +59,7 @@ namespace GuessingGame
             return hint;
         }
         
-        //Method to start reset game
+        //Method to reset game
         public override void ResetGame()
         {
             SecretNumber = GenerateRandomNumber();
